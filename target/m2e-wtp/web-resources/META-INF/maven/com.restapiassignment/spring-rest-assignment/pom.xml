@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.luv2code.springdemo</groupId>
-	<artifactId>spring-crm-rest</artifactId>
+	<groupId>com.restapiassignment</groupId>
+	<artifactId>spring-rest-assignment</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
@@ -24,6 +24,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+		
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -102,7 +103,7 @@
 
 	<build>
 
-		<finalName>spring-crm-rest</finalName>
+		<finalName>spring-rest-assignment</finalName>
 
 		<plugins>
 

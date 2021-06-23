@@ -1,4 +1,4 @@
-package com.rest.assignment.rest;
+package com.rest.assignment.exceptionhandling;
 
 public class CourseNotFoundException extends RuntimeException {
 

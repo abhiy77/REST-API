@@ -16,8 +16,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -25,13 +27,24 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan("com.rest.assignment")
-@PropertySource({ "classpath:persistence-mysql.properties" })
+@PropertySource({"classpath:persistence-mysql.properties"})
 public class DemoAppConfig implements WebMvcConfigurer {
 
 	@Autowired
 	private Environment env;
 	
 	private Logger logger = Logger.getLogger(getClass().getName());
+	
+	@Bean
+	public ViewResolver viewResolver() {
+		
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		
+		viewResolver.setPrefix("/");
+		viewResolver.setSuffix(".jsp");
+		
+		return viewResolver;
+	}
 	
 
 	@Bean

@@ -1,16 +1,16 @@
-package com.rest.assignment.rest;
+package com.rest.assignment.exceptionhandling;
 
-public class StudentErrorResponse {
+public class CourseErrorResponse {
 
 	private int status;
 	private String message;
 	private long timeStamp;
 	
-	public StudentErrorResponse() {
+	public CourseErrorResponse() {
 		
 	}
 
-	public StudentErrorResponse(int status, String message, long timeStamp) {
+	public CourseErrorResponse(int status, String message, long timeStamp) {
 		super();
 		this.status = status;
 		this.message = message;

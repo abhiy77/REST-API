@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rest.assignment.entity.Student;
 import com.rest.assignment.entity.Course;
-import com.rest.assignment.service.StudentService;
+import com.rest.assignment.entity.Student;
+import com.rest.assignment.exceptionhandling.CourseNotFoundException;
+import com.rest.assignment.exceptionhandling.StudentNotFoundException;
 import com.rest.assignment.service.CourseService;
+import com.rest.assignment.service.StudentService;
 
 @RestController
 @RequestMapping("/api/students")

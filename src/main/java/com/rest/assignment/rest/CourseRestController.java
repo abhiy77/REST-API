@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rest.assignment.entity.Course;
 import com.rest.assignment.entity.Student;
+import com.rest.assignment.exceptionhandling.CourseNotFoundException;
+import com.rest.assignment.exceptionhandling.StudentNotFoundException;
 import com.rest.assignment.service.CourseService;
 import com.rest.assignment.service.StudentService;
 
@@ -26,12 +28,6 @@ public class CourseRestController {
 	
 	@Autowired
 	private StudentService studentService;
-
-//	@GetMapping("/courses")
-//	public List<Course> getCourses(@RequestParam int page, @RequestParam int limit,
-//			@RequestParam Optional<String> sortBy){
-//		return courseService.findAll(PageRequest.of(page,limit,Sort.Direction.ASC,sortBy.orElse("id")));
-//	}
 	
 	@GetMapping("/")
 	public List<Course> getCourses(){
@@ -127,6 +123,12 @@ public class CourseRestController {
 		Course updatedCourse = courseService.deleteStudentFromCourse(course,student);
 		return updatedCourse.getStudents();
 	}
+	
+//	@GetMapping("/courses")
+//	public List<Course> getCourses(@RequestParam int page, @RequestParam int limit,
+//			@RequestParam Optional<String> sortBy){
+//		return courseService.findAll(PageRequest.of(page,limit,Sort.Direction.ASC,sortBy.orElse("id")));
+//	}
 	
 	
 	
